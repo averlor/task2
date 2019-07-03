@@ -92,7 +92,7 @@
 			var topPercent = top / wh;
 			// set a random speed
 			var thisSpeed = parseInt(flake.attr('data-speed'));
-			//		var speed1  = topPercent * thisSpeed;
+					// var speed1  = topPercent * thisSpeed;
 			// create a percentual partial speed for when the snowflake
 			// is initally already some way down
 			var speed2 = thisSpeed - ((top / wh) * thisSpeed);
@@ -108,6 +108,7 @@
 			// this is the animation loop for each snowflake
 			function loopAnim() {
 				flake.animate({
+					// TODO: Поменяй местами значения для начала и конца анимации, если нужен снег сверху-вниз
 						top: '100%',
 						left: thisLeft + Math.floor(Math.random() * (max - min + 1)) + min
 					}, 0)
@@ -123,7 +124,8 @@
 			// with the partial animation time,
 			// then we loop the animations from top to bottom
 			flake.animate({
-				top: wh
+				// TODO: Раскоментируй, если нужен снег сверху-вниз
+				// top: wh
 			}, speed2, 'linear', function () {
 				loopAnim();
 			});
